@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+  <body class="container">
+    <main>
+      <h1 class="box" id="heading">
+        <%= date %>
+      </h1>
+      <div class="box">
+        <% if (locals.item) { %>
+          <% item.forEach((item)=> { %>
+            <div class="item">
+              <input type="checkbox" name="checkbox">
+              <h2>
+                <%= item %>
+              </h2>
+            </div>
+            <% }) %>
+              <% } %>
+
+                <form action="/" method="post">
+                  <input type="text" name="newItem" placeholder="New Item">
+                  <button type="submit">+</button>
+                </form>
+      </div>
+    </main>
+
+    <%- include("partials/footer.ejs") %>
